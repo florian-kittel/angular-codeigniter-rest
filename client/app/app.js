@@ -5,4 +5,3 @@
  */
 
 
-alert("Hallo 5");
