@@ -7,17 +7,23 @@ module.exports = function (grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         uglify: {
-            my_target: {
+            all: {
                 files: {
-                    '../htdocs/app/app.min.js': ['app/**/*.js']
+                    'htdocs/app/app.min.js': ['client/app/**/*.js']
                 }
             }
+        },
+        copy : {
+             main: {
+                src: 'client/index.html',
+                dest: 'htdocs/index.html'
+             }
         },
         connect: {
             all: {
                 options: {
                     port: 9000,
-                    hostname: "0.0.0.0",
+                    hostname: "127.0.0.4",
                     base: 'htdocs',
                     middleware: function (connect, options) {
                         return [
@@ -30,10 +36,13 @@ module.exports = function (grunt) {
         },
         // grunt-open will open your browser at the project's URL
         open: {
-            all: {
+            client: {
                 // Gets the port from the connect configuration
                 //path: 'http://localhost:<%= connect.all.options.port%>'
-                path: 'http://localhost/codeigniterangularjs/'
+                path: 'http://127.0.0.4:9000/'
+            },
+            server: {
+                path: 'http://127.0.0.4:80/'
             }
         },
         watch: {
@@ -42,11 +51,11 @@ module.exports = function (grunt) {
             },
             scripts: {
                 files: [
-                    'app/**/*.js',
-                    'index.html',
-                    'app/**/*.html'
+                    'client/app/**/*.js',
+                    'client/index.html',
+                    'client/app/**/*.html'
                 ],
-                tasks: ['uglify'],
+                tasks: ['uglify', 'copy'],
                 options: {
                     spawn: false,
                 },
@@ -61,9 +70,14 @@ module.exports = function (grunt) {
     //grunt.loadNpmTasks('grunt-contrib-uglify');
 
     grunt.registerTask('dev', [
-        'uglify',
-        'open',
-        //'connect',
+        'copy',
+        'uglify:all',
+        'connect',
+        'open:client',      
         'watch'
+    ]);
+    
+    grunt.registerTask('serverstart', [
+        'open:server'
     ]);
 };
