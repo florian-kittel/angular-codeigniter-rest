@@ -53,11 +53,11 @@ If you want, you can also add the virtal host name to your local windows hosts.
 
 Save the file and restart the server (if its running) or start the server first time with the wampmanager.exe in the wamp directory.
 
-# 4. Install NPM packages
+## 4. Install NPM packages
 Of course, to run your project local we will use grunt. If your are not familiar with it, it's no problem. Follow the steps.
 1. Install node.js if it isn't installed on your system [https://nodejs.org/](https://nodejs.org/)
 2. Start a command line interface like `cmd` or `node.js command promt`
 3. navigate to your project directory, for example `cd D:/projectfolder/` and run `npm install`
 
-# 5. Run project
+## 5. Run project
 After all npm dependencies are successfull installed, you can use the two Batch-Files inside your projectfolder (`start-client.bat` and `start-server.bat`). Now you can start to develop your application. It will be automatically reload, if you made a change inside your projectfolder.
