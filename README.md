@@ -49,9 +49,16 @@ Now we go in the folder d:/wamp/vhosts/ and create an new file called codeignite
 </VirtualHost>
 ```
 
+Save the file.
+
 If you want, you can also add the virtal host name to your local windows hosts.
 
-Save the file and restart the server (if its running) or start the server first time with the wampmanager.exe in the wamp directory.
+To use the apache mod_rewirte module, you have to activate it.
+1. Click on the WAMP icon in your taskbar and open the wamp tray menu.
+2. Go to Apache > Apache Modules
+3. Activate the mode_rewirte by selecting it
+
+If the server not automatically restart the server, do it manually by selecting `Restart all Services` on the WAMP tray menu.
 
 ## 4. Install NPM packages
 Of course, to run your project local we will use grunt. If your are not familiar with it, it's no problem. Follow the steps.
