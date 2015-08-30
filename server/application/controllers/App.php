@@ -18,12 +18,13 @@ class App extends CI_Controller {
         $newdata = array(
             'username' => 'johndoe',
             'email' => 'johndoe@some-site.com',
+            'password' => 'johndoe',
             'logged_in' => FALSE
         );
 
         $this->session->set_userdata($newdata);
 
-        print_r($this->session->userdata());
+        //print_r($this->session->userdata());
         include(BASEPATH . '../../client/index.html');
     }
 

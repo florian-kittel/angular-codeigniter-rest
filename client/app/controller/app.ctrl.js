@@ -4,4 +4,4 @@
  * and open the template in the editor.
  */
 
-alert('appctrl');
+//alert('appctrl');
