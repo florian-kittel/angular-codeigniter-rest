@@ -64,7 +64,7 @@ If the server not automatically restart the server, do it manually by selecting 
 Of course, to run your project local we will use grunt. If your are not familiar with it, it's no problem. Follow the steps.
 #. Install node.js if it isn't installed on your system [https://nodejs.org/](https://nodejs.org/)
 #. Start a command line interface like `cmd` or `node.js command promt`
-#. navigate to your project directory, for example `cd D:/projectfolder/` and run `npm install`
+#. navigate to your project directory, for example `cd D:/projectfolder/` and run `install`
 
 ## 5. Run project
 After all npm dependencies are successfull installed, you can use the two Batch-Files inside your projectfolder (`start-client.bat` and `start-server.bat`). Now you can start to develop your application. It will be automatically reload, if you made a change inside your projectfolder.
@@ -73,5 +73,7 @@ After all npm dependencies are successfull installed, you can use the two Batch-
 ## Changelog
 *2015-10-25*
 * Extend readme
+* extend install.bat
+* added unistall.bat
 * add SASS compiling configuration and folder in client directory
 * change gitignore for htdocs files
