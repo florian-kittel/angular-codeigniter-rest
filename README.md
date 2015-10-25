@@ -54,17 +54,17 @@ Save the file.
 If you want, you can also add the virtal host name to your local windows hosts.
 
 To use the apache mod_rewirte module, you have to activate it.
-#. Click on the WAMP icon in your taskbar and open the wamp tray menu.
-#. Go to Apache > Apache Modules
-#. Activate the mod_rewirte by selecting it (since version 2.5 it is named as rewrite module)
+1. Click on the WAMP icon in your taskbar and open the wamp tray menu.
+2. Go to Apache > Apache Modules
+3. Activate the mod_rewirte by selecting it (since version 2.5 it is named as rewrite module)
 
 If the server not automatically restart the server, do it manually by selecting `Restart all Services` on the WAMP tray menu.
 
 ## 4. Install NPM packages
 Of course, to run your project local we will use grunt. If your are not familiar with it, it's no problem. Follow the steps.
-#. Install node.js if it isn't installed on your system [https://nodejs.org/](https://nodejs.org/)
-#. Start a command line interface like `cmd` or `node.js command promt`
-#. navigate to your project directory, for example `cd D:/projectfolder/` and run `install`
+1. Install node.js if it isn't installed on your system [https://nodejs.org/](https://nodejs.org/)
+2. Start a command line interface like `cmd` or `node.js command promt`
+3. navigate to your project directory, for example `cd D:/projectfolder/` and run `install`
 
 ## 5. Run project
 After all npm dependencies are successfull installed, you can use the two Batch-Files inside your projectfolder (`start-client.bat` and `start-server.bat`). Now you can start to develop your application. It will be automatically reload, if you made a change inside your projectfolder.
