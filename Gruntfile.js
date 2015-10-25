@@ -15,7 +15,7 @@ module.exports = function (grunt) {
         },
         clean: {
             dist: {
-               src: ["htdocs/"] 
+               src: ["htdocs/", "!node_modules/grunt/", "node_modules/**" ] 
             }
         },
         copy: {
