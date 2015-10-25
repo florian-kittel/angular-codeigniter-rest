@@ -1,7 +1,4 @@
 /nbproject
 /nbproject/private/
 /node_modules
-/htdocs/bower_components
-/htdocs/css
-/htdocs/app
-/htdocs/index.html
+/htdocs

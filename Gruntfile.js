@@ -13,10 +13,17 @@ module.exports = function (grunt) {
                 }
             }
         },
+        clean: {
+            dist: {
+               src: ["htdocs/"] 
+            }
+        },
         copy: {
-            main: {
-                src: 'client/index.html',
-                dest: 'htdocs/index.html'
+            files: {
+                cwd: 'client/',
+                src: ['*.php', '*.html', '.htaccess'],
+                dest: 'htdocs/',
+                expand: true 
             }
         },
         connect: {
@@ -47,17 +54,19 @@ module.exports = function (grunt) {
         },
         watch: {
             options: {
-                livereload: true,
+                livereload: true
             },
             scripts: {
                 files: [
                     'client/app/**/*.js',
                     'client/index.html',
+                    'client/index.php',
+                    'client/.htaccess',
                     'client/app/**/*.html'
                 ],
                 tasks: ['uglify', 'copy'],
                 options: {
-                    spawn: false,
+                    spawn: false
                 }
             },
             sass: {
@@ -85,12 +94,23 @@ module.exports = function (grunt) {
     // Load the plugin that provides the "uglify" task.
     //grunt.loadNpmTasks('grunt-contrib-uglify');
 
+    grunt.registerTask('delete', [
+        'clean:dist'
+    ]);
+    
     grunt.registerTask('dev', [
+        'sass',
         'copy',
         'uglify:all',
         'connect',
         'open:client',
         'watch'
+    ]);
+
+    grunt.registerTask('dist', [
+        'sass',
+        'copy',
+        'uglify:all'
     ]);
 
     grunt.registerTask('serverstart', [
