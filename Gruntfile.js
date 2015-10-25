@@ -13,11 +13,11 @@ module.exports = function (grunt) {
                 }
             }
         },
-        copy : {
-             main: {
+        copy: {
+            main: {
                 src: 'client/index.html',
                 dest: 'htdocs/index.html'
-             }
+            }
         },
         connect: {
             all: {
@@ -58,8 +58,24 @@ module.exports = function (grunt) {
                 tasks: ['uglify', 'copy'],
                 options: {
                     spawn: false,
-                },
+                }
             },
+            sass: {
+                files: 'client/sass/**/*.scss',
+                tasks: ['sass']
+            }
+        },
+        sass: {
+            options: {
+                outputStyle: 'compressed',
+                sourceMap: true,
+                sourceComments: false
+            },
+            dist: {
+                files: {
+                    'htdocs/css/app.css': 'client/sass/app.scss'
+                }
+            }
         }
 
 
@@ -73,10 +89,10 @@ module.exports = function (grunt) {
         'copy',
         'uglify:all',
         'connect',
-        'open:client',      
+        'open:client',
         'watch'
     ]);
-    
+
     grunt.registerTask('serverstart', [
         'open:server'
     ]);
